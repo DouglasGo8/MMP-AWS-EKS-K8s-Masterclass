@@ -4,15 +4,7 @@
 
 ## K8s Concepts
 
-
 > 
-> 
-> Persistent Volumes
-> Pods
-> Declarative with YAML
-> PVC
-> Replica Sets
-> Secrets
 > Load Balancers
 > Deployments
 > Init Containers
@@ -35,8 +27,16 @@
 > Storage Class
 > Config Maps
 
----
+| K8s Architecture |
+| ------------------------------- |
+| *kubectl - Imperative (Cmds)* |
+| *Persistent Volumes* |
+| *Pods* |
+| *Declarative with YAML* |
+| *PVC* |
+| *Replica Sets* |
+| *Secrets* |
 
-| K8s Architecture                |
-| ----------------------------    |
-| kubectl - Imperative (Cmds)     |
+## Links
+
+[Markdown Lint](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
