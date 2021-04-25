@@ -5,10 +5,10 @@
 ## K8s Concepts
 
 > Architecture
-> kubectl - Imperative (Cmds)
-> Persistent Volumes
-> Pods
-> Declarative with YAML
+> 
+>
+> 
+>
 > PVC
 > Replica Sets
 > Secrets
@@ -36,3 +36,9 @@
 
 ---
 
+|     Architecture  |
+|---|---|---|---|---|
+| kubectl - Imperative (Cmds)  |   
+| Persistent Volumes           |  
+| Pods                         |  
+|  Declarative with YAML       |  
