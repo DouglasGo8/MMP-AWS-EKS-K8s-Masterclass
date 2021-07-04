@@ -1,0 +1,19 @@
+appVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: my-web-vertx-native
+  labels:
+    app: my-web-vertx-native
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-web-vertx-native
+  template:
+    metadata:
+      labels:
+        app: my-web-vertx-native
+    spec:
+      containers:
+        - name: my-web-vertx-native
+          image: douglasdb/my-web-vertx-native

@@ -1,0 +1,61 @@
+= Web-native-app
+
+image:https://img.shields.io/badge/vert.x-4.1.0-purple.svg[link="https://vertx.io"]
+
+This application was generated using http://start.vertx.io
+
+== Building
+
+To launch your tests:
+
+[source]
+----
+./mvnw clean test
+----
+
+To package your application:
+
+[source]
+----
+./mvnw clean package
+----
+
+To run your application:
+
+[source]
+----
+./mvnw clean compile exec:java
+----
+
+== Help
+
+* https://vertx.io/docs/[Vert.x Documentation]
+* https://stackoverflow.com/questions/tagged/vert.x?sort=newest&pageSize=15[Vert.x Stack Overflow]
+* https://groups.google.com/forum/?fromgroups#!forum/vertx[Vert.x User Group]
+* https://gitter.im/eclipse-vertx/vertx-users[Vert.x Gitter]
+* https://www.jetdrone.xyz/2018/08/10/Vertx-native-image-10mb.html
+* https://www.graalvm.org/docs/getting-started/container-images/
+* https://www.graalvm.org/docs/getting-started/container-images/
+* https://aws.amazon.com/blogs/opensource/using-graalvm-build-minimal-docker-images-java-applications/
+
+[source,xml]
+----
+<plugin>
+  <groupId>org.graalvm.nativeimage</groupId>
+  <artifactId>native-image-maven-plugin</artifactId>
+  <version>21.0.0.2</version>   <!--(1)-->
+  <executions>
+    <execution>
+      <goals>
+        <goal>native-image</goal>
+      </goals>
+      <phase>package</phase>
+    </execution>
+  </executions>
+  <configuration>
+    <imageName>${project.name}</imageName>    <!--(2)-->
+    <mainClass>${main.verticle}</mainClass>  <!--(3)-->
+    <buildArgs>--no-server --no-fallback --enable-all-security-services --allow-incomplete-classpath --initialize-at-run-time=io.netty.handler.codec.compression.BrotliDecoder$1 --initialize-at-run-time=io.netty.util.internal.logging.Log4JLogger --initialize-at-run-time=io.netty.handler.codec.compression.BrotliDecoder -H:+PrintClassInitialization -H:+ReportExceptionStackTraces</buildArgs> <!--(4)-->
+  </configuration>
+</plugin>
+----
